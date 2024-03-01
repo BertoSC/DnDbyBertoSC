@@ -12,12 +12,14 @@ import dd.core.Troll;
 
 import java.util.Random;
 
+/*Clase cliente */
 public class DDApp {
     private Personaje [] aliados;
     private Personaje [] enemigos;
     private Random random;
     private Scanner entrada; 
 
+    /*Constructor que inicializa la clase y las funcionalidades del juego (explicaciones, ejércitos, batalla...)*/
     public DDApp() throws InterruptedException{
         random= new Random();
         entrada= new Scanner(System.in);
@@ -64,6 +66,7 @@ public class DDApp {
 
     }
 
+    /*método que llena los arrays de los ejércitos del jugador y la máquina */ 
     private void CrearEjercitos(){
             
        aliados= new Personaje[3];
@@ -90,17 +93,20 @@ public class DDApp {
       
     }
 
+    /* método que asigna los tipos de ataques a los tres personajes del jugador */ 
     private void AsignarArmas(){
         aliados[0].setAtaque(new AtaqueEspada());
         aliados[1].setAtaque(new AtaqueEspada());
         aliados[2].setAtaque(new AtaqueArco());
     }
     
+    /* método que escoge un tipo de ataque de forma aleatoria */
     private AtaqueTipo AtaqueAleatorio(int n) {
         AtaqueTipo[] tiposDeAtaque = {new AtaqueEspada(), new AtaqueArco(), new AtaqueCuchillo()};
         return tiposDeAtaque[random.nextInt(tiposDeAtaque.length)];
     }
 
+    /* método que escoge un rival de forma aleatoria del grupo contrario */ 
     private Personaje ElegirRival(Personaje[] grupo) {
         int indice = random.nextInt(grupo.length);
         if (!ComprobarMuerte(grupo[indice])) {
@@ -111,7 +117,7 @@ public class DDApp {
         }
     }
 
-        
+    /* método que comprueba la muerte de un personaje */    
     private boolean ComprobarMuerte(Personaje x){
         if (x.getSalud()>0){
             return false;
@@ -119,7 +125,8 @@ public class DDApp {
             return true;
         }
     }
-
+    
+    /*método que comprueba si un grupo ha ganado analizando el array del equipo rival */
     private boolean ComprobarVictoria(Personaje [] party){
         int contador=0;
         for (int c=0; c<party.length; c++){
@@ -135,7 +142,8 @@ public class DDApp {
 
 
     }
-
+    
+    /*método que estructura la batalla por turnos */
     private void Batalla() throws InterruptedException{
         System.out.println();
         System.out.println("QUE EMPIECE LA BATALLA");
@@ -166,6 +174,8 @@ public class DDApp {
                 }
         }
     }
+
+    /*método que gestiona el turno del jugador */
     private void turnoJugador() throws InterruptedException{
         for (int t=0; t<aliados.length; t++){
             if (ComprobarMuerte(aliados[t])==false){
@@ -201,7 +211,8 @@ public class DDApp {
         
 
     }
-
+    
+    /*método que gestiona el turno de la CPU */
     private void turnoRival() throws InterruptedException{
         for (int t=0; t<enemigos.length; t++){
             if (ComprobarMuerte(enemigos[t])==false){
@@ -236,7 +247,8 @@ public class DDApp {
         }
 
     }
-
+    
+    /*método que imprime los supervivientes de la batalla (si los hay) */
     private void Supervivientes(){
         System.out.println("LOS SUPERVIVIENTES SON:");
         for (int i=0; i<3; i++){
