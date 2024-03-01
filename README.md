@@ -1,3 +1,5 @@
+NOTA: en mi proyecto le he añadido una interacción mínima con el usuario jugador, para permitir nombrar a los tres personajes de su grupo y simular una tirada de dados pulsando ENTER en su turno. Además utilicé varios Sleep para dar algo de tiempo entre cada turno de ataques y también simular esa tirada de dados. 
+
 ¿Cuáles son las estrategias?
 
 La estrategia es la infertace AtaqueTipo que, a posteriori, es implementada por las clases de AtaqueEspada, AtaqueArco y AtaqueCuchillo, que son las estrategias concretas.
