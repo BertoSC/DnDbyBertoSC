@@ -1,4 +1,4 @@
-NOTA: en mi proyecto le he añadido una interacción mínima con el usuario jugador, para permitir nombrar a los tres personajes de su grupo y simular una tirada de dados pulsando ENTER en su turno. Además utilicé varios Sleep para dar algo de tiempo entre cada turno de ataques y también simular esa tirada de dados. 
+NOTA: en mi proyecto le he añadido una interacción mínima con el usuario jugador, para permitir nombrar a los tres personajes de su grupo y simular una tirada de dados pulsando ENTER en su turno. Además utilicé varios Sleep para dar algo de tiempo entre cada turno de ataques y también simular esa tirada de dados. No quedé del todo contento con la clase del main, porque se me ha quedado algo más larga de lo que pensaba en un primer momento, pero creo que todo cumple con lo que se pedía. 
 
 ¿Cuáles son las estrategias?
 
