@@ -85,7 +85,7 @@ public class DDApp {
        enemigos= new Personaje[rivales];
        for (int x=0; x<rivales; x++){
            enemigos[x]= new Troll("Troll "+(x+1));
-           enemigos[x].setAtaque(AtaqueAleatorio(rivales));
+           enemigos[x].setAtaque(AtaqueAleatorio());
 
         }
         
@@ -101,7 +101,7 @@ public class DDApp {
     }
     
     /* método que escoge un tipo de ataque de forma aleatoria */
-    private AtaqueTipo AtaqueAleatorio(int n) {
+    private AtaqueTipo AtaqueAleatorio() {
         AtaqueTipo[] tiposDeAtaque = {new AtaqueEspada(), new AtaqueArco(), new AtaqueCuchillo()};
         return tiposDeAtaque[random.nextInt(tiposDeAtaque.length)];
     }
